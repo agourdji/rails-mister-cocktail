@@ -1,4 +1,4 @@
-<div class="container header text-center">
+<div class="header">
   <h1>THE MINIBAR</h1>
 </div>
 
@@ -12,17 +12,7 @@
 <div class="container">
   <h2 class="text-center">What's your drink?</h2>
   <div class="row">
-    <% @cocktails.each do |c| %>
-    <div class="col-xs-12 col-sm-4">
-      <%= link_to cocktail_path(c) do %>
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= cl_image_path c.photo.path, width: 150 %>');">
-        <div class="card-description">
-          <h3><%= c.name %></h3>
-        </div>
-      </div>
-      <% end %>
-      <% end %>
-    </div>
+    <%= render @cocktails %>
   </div>
 </div>
 

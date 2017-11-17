@@ -1,7 +1,17 @@
-<h1>Add a Dose</h1>
-<%= simple_form_for [@cocktail, @dose] do |d| %>
-  <%= d.label :ingredient_id, "Pick an ingredient" %>
-  <%= d.select :ingredient_id, options_for_select(Ingredient.all.map{|i|[i.name, i.id]}) %>
-  <%= d.input :description %>
-  <%= d.submit "Add dose", class: "btn btn-primary" %>
-<% end %>
+<div class="header">
+  <h1>THE MINIBAR</h1>
+</div>
+
+<div class="container text-center">
+  <h2>Add a Dose</h2>
+  <div class="form">
+    <%= simple_form_for [@cocktail, @dose] do |d| %>
+      <%= d.label :ingredient_id, "Pick an ingredient" %>
+      <%= d.select :ingredient_id, options_for_select(Ingredient.all.map{|i|[i.name, i.id]}) %>
+      <%= d.input :description %>
+      <%= d.submit "Add dose", class: "btn btn-success" %>
+    <% end %>
+  </div>
+</div>
+
+<div class="banner-footer" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path "pomegranate.jpg" %>');">

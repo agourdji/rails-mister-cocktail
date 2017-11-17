@@ -1,0 +1,13 @@
+.cocktail {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 50px;
+  ul {
+    list-style: none;
+    text-align: left;
+  }
+  li {
+    font-weight: bold;
+  }
+}

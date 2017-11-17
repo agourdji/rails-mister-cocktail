@@ -19,3 +19,15 @@
     margin-bottom: 30px;
   }
 }
+
+.banner-footer {
+  color: white;
+  text-align: center;
+  height: 40vh;
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-attachment: fixed;
+  background-position: top;
+}
