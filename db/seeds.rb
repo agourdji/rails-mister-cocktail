@@ -12,6 +12,10 @@
 #   Ingredient.create!(name: record)
 # end
 
+Dose.delete_all
+Ingredient.delete_all
+Cocktail.delete_all
+
 Ingredient.create(name: "lemon")
 Ingredient.create(name: "ice")
 Ingredient.create(name: "mint leaves")

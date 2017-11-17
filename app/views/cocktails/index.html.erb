@@ -1,11 +1,33 @@
-<h1>MISTER COCKTAIL</h1>
-<h2>What's your drink?</h2>
-<% @cocktails.each do |c| %>
-  <%= link_to cocktail_path(c) do %>
-    <h3><%= c.name %></h3>
-    <% if c.photo? %>
-      <%= cl_image_tag c.photo.path, width: 150 %>
-    <% end %>
-  <% end %>
-<% end %>
-<%= link_to 'Add a cocktail', new_cocktail_path %>
+<div class="container header text-center">
+  <h1>THE MINIBAR</h1>
+</div>
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path "cocktails_banner.jpg" %>');">
+  <div class="banner-content">
+    <p>Sharing a collection of the best cocktails</p>
+    <%= link_to 'Add your own', new_cocktail_path, :class => "btn btn-primary btn-lg" %>
+  </div>
+</div>
+
+<div class="container">
+  <h2 class="text-center">What's your drink?</h2>
+  <div class="row">
+    <% @cocktails.each do |c| %>
+    <div class="col-xs-12 col-sm-4">
+      <%= link_to cocktail_path(c) do %>
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= cl_image_path c.photo.path, width: 150 %>');">
+        <div class="card-description">
+          <h3><%= c.name %></h3>
+        </div>
+      </div>
+      <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="container text-center">
+  <%= link_to 'Add a cocktail', new_cocktail_path %>
+</div>
+
+
